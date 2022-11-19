@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- si se omite el atributo "action" significa que el formulario se va a auto-procesar (por ejemplo mediante javascript) -->
+    <form action="https://jonmircha.com" method="POST" autocomplete="off">
+      <!-- por defecto el method="GET" y no es necesario ponerlo, con el  method="POST" la informacion se envia por la cabecera del documento y en forma oculta -->
+      <fieldset id="login">
+        <!-- el fieldset puede tener el atributo disabled -->
+        <legend>Login de usuario</legend>
+        <label for="usuario">Usuario:</label>
+        <input
+          type="text"
+          name="usuario"
+          id="usuario"
+          placeholder="ingresa tu usuario"
+          pattern="^[A-Za-z]+$"
+          title="el campo usuario solo admite letras minusculas y mayusculas"
+          required
+        />
+        <br />
+        <label for="correo">Escribe tu correo electronico</label>
+        <input
+          type="email"
+          id="correo"
+          placeholder="escribe tu correo de registro"
+          autocomplete="on"
+          required
+        />
+        <!-- si en el campo name se pone email el autocomplete va a detectar los correos usados para sugerencia -->
+        <br />
+        <label for="contraseña">Contraseña:</label>
+        <input
+          type="password"
+          name="contraseña"
+          id="contraseña"
+          placeholder="ingresa tu contraseña"
+          required
+        />
+        <br />
+        <input type="submit" />
+        <br />
+        <input type="reset" />
+      </fieldset>
+    </form>
+  </body>
+</html>

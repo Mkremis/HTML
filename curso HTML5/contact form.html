@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario De Contacto</title>
+  </head>
+  <body>
+    <h1>Formulario De Contacto</h1>
+    <!--   action="https://formsubmit.co/martinkremis@gmail.com"
+      method="POST"
+      autocomplete="off" -->
+    <form class="form">
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Escribe tu nombre"
+        pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+        title="nombre solo acepta letras y espacios en blanco"
+        autocomplete="name"
+        required
+      />
+      <br />
+      <input
+        type="email"
+        name="correo"
+        placeholder="Escribe tu correo"
+        pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$"
+        title="formato de correo invalido"
+        required
+        autocomplete="email"
+      />
+      <br />
+      <textarea name="comentarios" cols="30" rows="10" required></textarea>
+      <br />
+      <input type="submit" />
+    </form>
+    <hr />
+    <output></output>
+  </body>
+  <script>
+    const $form = document.querySelector("form"),
+      $output = document.querySelector("output");
+    $form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      fetch("https://formsubmit.co/ajax/martinkremis@gmail.com", {
+        method: "POST",
+        body: new FormData(e.target),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error));
+    });
+  </script>
+</html>

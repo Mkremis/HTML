@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <p>Elige tu idioma</p>
+      <select name="idioma" required>
+        <option value="" selected>Elige una opcion</option>
+        <option value="es">Español</option>
+        <option value="en">Ingles</option>
+        <option value="fr">Frances</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Portugues</option>
+      </select>
+      <br />
+      <br />
+      <fieldset>
+        <legend>Elige tu lenguaje de programacion favorito</legend>
+        <label for="radio-js">JavaScript</label>
+        <input
+          type="radio"
+          name="lenguaje"
+          id="radio-js"
+          value="JavaScript"
+          required
+        />
+        <label for="radio-PHP">PHP</label>
+        <input type="radio" name="lenguaje" id="radio-PHP" value="PHP" />
+        <label for="radio-Python">Python</label>
+        <input
+          type="radio"
+          name="lenguaje"
+          id="radio-Python"
+          value="Python"
+          checked
+        />
+      </fieldset>
+      <br />
+      <br />
+      <fieldset>
+        <legend>Elige tus intereses</legend>
+        <!-- se puede omitir el label for y el id del input, incluyendo el input dentro del tag de label -->
+        <!-- se puede poner solo el name sin value, por ejemplo name="intereses-deporte" y al no poner value el resultado sera "intereses-deporte=on" -->
+        <label>
+          <input type="checkbox" name="intereses" value="deportes" />
+          Deportes
+        </label>
+        <label>
+          <input type="checkbox" name="intereses" value="finanzas" checked />
+          Finanzas
+        </label>
+        <label>
+          <input type="checkbox" name="intereses" value="salud" />
+          Salud
+        </label>
+        <label>
+          <input type="checkbox" name="intereses" value="politica" checked />
+          Politica
+        </label>
+        <label>
+          <input type="checkbox" name="intereses" value="ecologia" />
+          Ecologia
+        </label>
+      </fieldset>
+      <br /><br />
+      <p>
+        <label>
+          <input type="checkbox" name="terminos" required />
+          Acepta los terminos y condiciones?
+        </label>
+      </p>
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+  </body>
+</html>
